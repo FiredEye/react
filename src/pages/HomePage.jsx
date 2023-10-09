@@ -2,10 +2,10 @@ import React from 'react'
 
 const HomePage = () => {
   return (
-    <div>HomePage
-      <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo assumenda iste cupiditate, vitae, officia iusto minima </h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea magnam et quo voluptatem vitae maxime quibusdam, ab atque dicta sunt autem voluptas nesciunt a nostrum minima! Quasi minima eius commodi quibusdam repudiandae neque. Nulla impedit nemo excepturi magni, doloribus officiis voluptate eum ratione inventore, culpa dolorum, iusto esse ullam sequi!</p>
-    </div>
+    <div className='bg-gray-800 text-center text-gray-300'>
+    <h1 className='text-[40px] mb-6'>This is Home page.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, nostrum beatae? Esse dolore qui unde exercitationem impedit soluta sapiente aspernatur reiciendis eos error repudiandae beatae facilis nisi, cumque accusantium quaerat tempore obcaecati est omnis consequuntur sit, quis quos. Iste necessitatibus consequuntur ipsam, repellat nostrum consequatur facilis explicabo commodi inventore itaque labore eos sit asperiores, odit nam? Nesciunt unde aspernatur, voluptates iste similique numquam veritatis debitis perferendis reprehenderit accusamus voluptas dignissimos iusto distinctio nisi eos sint obcaecati minima, itaque fugiat cumque atque rem odit quibusdam! Minima provident in saepe perferendis officia cumque, iusto architecto qui optio magni, quia molestiae ullam eius.</p>
+  </div>
   )
 }
 
