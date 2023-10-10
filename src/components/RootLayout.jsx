@@ -5,10 +5,10 @@ import Footer from './Footer'
 const RootLayout = () => {
 
   return (
-    <div className='homePage flex flex-col justify-between min-h-[100vh]'>
+    <div className='min-h-[100vh]'>
 <Header />
   <Outlet />
-  <Footer />
+  {/* <Footer /> */}
     </div>
   )
 }
