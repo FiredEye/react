@@ -206,7 +206,7 @@ const Crud = () => {
             {formik.errors.msg && formik.touched.msg && (
               <p className="text-red-500 text-[12px]">{formik.errors.msg}</p>
             )}
-          </div>
+          </div> 
 
           <div className="space-y-3">
             <p>Select Your Image</p>
