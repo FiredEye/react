@@ -1,22 +1,25 @@
 import React from 'react'
-import { useMovieByCategoryQuery } from '../features/movieApi';
+import { useLocation, useNavigate } from 'react-router-dom';
+import {useMovieBySearchQuery} from '../features/movieApi';
 import Loading from '../components/LoadingPage';
 import Error from '../components/ErrorPage';
 import { Image, Shimmer } from 'react-shimmer';
-import { useNavigate, useParams } from 'react-router-dom';
 
-const CategoryMovie = () => {
-  const {category}=useParams()
-  const navigate=useNavigate()
-    const {data,isLoading,error,isError}=useMovieByCategoryQuery(category || 'now_playing');
+const SearchMovie = () => {
+    const navigate=useNavigate();
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    
+    const searchValue = searchParams.get('search');
   
+    const { isLoading, isError, error, data } = useMovieBySearchQuery(searchValue);
     if(isLoading) return<Loading/>
     
     if(isError) return<Error error={error}/>
     
       return (<div className='grid grid-cols-3 gap-3 justify-around'>
         {data.results.map((movie,i)=>(
-          <div key={i} className='mb-[20px] flex flex-col items-center gap-[14px] px-[30px] cursor-pointer' onClick={()=>navigate(`/movie/detail/${movie?.id}`)}>
+          <div key={i} className='mb-[20px] flex flex-col items-center gap-[14px] px-[30px] cursor-pointer hover:scale-[1.005]' onClick={()=>navigate(`/movie/detail/${movie?.id}`)}>
             <h1>Title: {movie.title}</h1>
             <Image
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="movie image" width={300}  height={340} className='rounded'
@@ -28,6 +31,6 @@ const CategoryMovie = () => {
         ))}
         </div>
       );
-    };
+}
 
-export default CategoryMovie
+export default SearchMovie
