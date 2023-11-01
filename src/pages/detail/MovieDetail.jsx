@@ -1,21 +1,36 @@
-import React from 'react'
-import VideoCompo from './VideoCompo'
-import { useParams } from 'react-router-dom'
-import { useGetMovieDetailQuery } from '../../features/movieApi';
-
+import { useParams } from "react-router-dom";
+import {
+  useGetVideosByMovieIdQuery,
+  useGetCrewByMovieIdQuery,
+} from "../../features/movieApi";
+import Similar from "./Similar";
+import Recommend from "./Recommend";
+import DetailBanner from "./DetailBanner";
+import Casts from "./Casts";
+import VideoSection from "./videoSection/VideoSection";
 
 const MovieDetail = () => {
-    const {id}=useParams()
-    const { isLoading, isError, error, data } = useGetMovieDetailQuery(id);
+  const { id } = useParams();
+  const {
+    data: vData,
+    isLoading: vIsLoading,
+    isFetching: vIsFetching,
+  } = useGetVideosByMovieIdQuery(id);
+  const { data, isLoading, isFetching } = useGetCrewByMovieIdQuery(id);
+
   return (
-    <div className='p-6 space-y-5'>
+    <>
+      <DetailBanner crew={data?.crew} />
+      <Casts data={data?.cast} loading={isLoading} fetching={isFetching} />
+      <VideoSection
+        data={vData?.results}
+        loading={vIsLoading}
+        fetching={vIsFetching}
+      />
+      <Similar movieId={id} />
+      <Recommend movieId={id} />
+    </>
+  );
+};
 
-      <h1>{data?.original_title}</h1>
-
-      <VideoCompo id={id} />
-      <p>{data?.overview}</p>
-    </div>
-  )
-}
-
-export default MovieDetail
+export default MovieDetail;

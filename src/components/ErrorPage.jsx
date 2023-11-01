@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
+import ContentWrapper from "./ContentWrapper";
 
-const Error = ({error}) => {
- 
+const Error = ({ error }) => {
   return (
-    <div>
-    <h1 className='text-pink-700 p-5'>{error?.data?.status_message}</h1>
-  </div>
-  )
-}
+    <ContentWrapper>
+      <h1 className="text-pink-700 p-5">{error?.data?.status_message}</h1>
+    </ContentWrapper>
+  );
+};
 
-export default Error
+export default Error;
