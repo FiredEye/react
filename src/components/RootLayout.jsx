@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const RootLayout = () => {
   return (
-    <div className="min-h-[100vh]">
+    <div className="min-h-[100vh] flex flex-col justify-between">
       <Header />
       <Outlet />
       <Footer />

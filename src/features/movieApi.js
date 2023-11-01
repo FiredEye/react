@@ -1,5 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { api_key, baseUrl } from "./constant";
+import { baseUrl } from "./constant";
+
+const api_key = import.meta.env.VITE_API_KEY;
 
 export const movieApi = createApi({
   reducerPath: "movieApi",
