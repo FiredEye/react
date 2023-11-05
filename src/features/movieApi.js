@@ -4,7 +4,7 @@ import { baseUrl } from "./constant";
 const api_key = import.meta.env.VITE_API_KEY;
 
 export const movieApi = createApi({
-  reducerPath: "movieApi",
+  reducerPath: 'movieApi',
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     movieByCategory: builder.query({
