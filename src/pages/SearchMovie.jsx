@@ -90,7 +90,7 @@ const SearchMovie = () => {
         </div>
       )}
       {!isLoading && query && (
-        <div className="flex justify-center px-5 mt-4 gap-4 items-center">
+        <div className="flex justify-center px-5 my-5 gap-4 items-center">
           <button
             onClick={() => {
               navigate(`/movie/search/${query}/${data?.page - 1}`);
