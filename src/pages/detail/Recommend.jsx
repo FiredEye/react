@@ -36,13 +36,13 @@ const Recommend = ({ movieId }) => {
               <>
                 {!isFetching && (
                   <div className="relative">
-                    <div
+                    {/* <div
                       className="absolute right-[-1px] top-0 w-[70px] h-full z-10"
                       style={{
                         background:
                           "linear-gradient(90deg, rgba(4, 21, 45, 0) 0%, rgb(60,60,60) 70%)",
                       }}
-                    ></div>
+                    ></div> */}
                     <div className="flex gap-5 mb-2 overflow-x-auto">
                       {data?.results?.map((movie, i) => (
                         <div

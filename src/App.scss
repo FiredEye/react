@@ -2,9 +2,7 @@ body {
   background-color: rgb(60, 60, 60);
   color: #fff;
 }
-::-webkit-scrollbar {
-  display: none;
-}
+
 .skeleton {
   position: relative;
   overflow: hidden;
@@ -45,4 +43,26 @@ body {
     object-position: center 18%;
     display: block;
   }
+}
+::-webkit-scrollbar {
+  // width: 6px; /* Width of the scrollbar */ 
+  height: 12px;
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: #9e9999; /* Background color of the track */
+  border-radius: 6px; /* Rounded corners on the track */
+}
+
+/* Handle (scrollbar itself) */
+::-webkit-scrollbar-thumb {
+  background-color: #646464; /* Color of the scrollbar handle */
+  border-radius: 6px; /* Rounded corners on the handle */
+  border: 1.5px solid #c6c1c1; /* Padding around the handle to create space */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker color when hovering */
 }

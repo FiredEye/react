@@ -19,14 +19,14 @@ const Casts = ({ data, loading, fetching }) => {
           <>
             {!fetching && (
               <div className="relative">
-                <div
+                {/* <div
                   className="absolute right-[-1px] top-0 w-[90px] h-full z-10"
                   style={{
                     background:
                       "linear-gradient(90deg, rgba(4, 21, 45, 0) 0%, rgb(60,60,60) 70%)",
                   }}
-                ></div>
-                <div className="flex w-full gap-[25px] px-[20px] overflow-x-auto">
+                ></div> */}
+                <div className="flex w-full gap-[23px] px-[20px] overflow-hidden overflow-x-auto">
                   {data?.map((item) => (
                     <div className="text-center " key={item.id}>
                       <div className="relative w-[100px] h-[100px] rounded-[50%] mb-[15px] md:w-[140px] md:h-[140px] overflow-hidden profileImg">

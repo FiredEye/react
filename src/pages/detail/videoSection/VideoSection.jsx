@@ -27,13 +27,13 @@ const VideoSection = ({ data, loading, fetching }) => {
               <>
                 {!fetching && (
                   <div className="relative">
-                    <div
+                    {/* <div
                       className="absolute right-[-1px] top-0 w-[85px] h-full z-10"
                       style={{
                         background:
                           "linear-gradient(90deg, rgba(4, 21, 45, 0) 0%, rgb(60,60,60) 70%)",
                       }}
-                    ></div>
+                    ></div> */}
                     <div className="flex w-full gap-[25px] overflow-x-auto md:gap-[20px]">
                       {data?.map((video) => (
                         <div
